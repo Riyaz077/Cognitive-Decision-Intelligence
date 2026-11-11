@@ -1,0 +1,14 @@
+project:
+  name: "Cognitive Decision Intelligence Framework"
+  random_state: 42
+  results_path: "results/unified_model_results.csv"
+data:
+  walmart_dir: "data/walmart"
+  amazon_dir: "data/amazon_reviews"
+  m5_dir: "data/m5"
+amazon:
+  max_features: 5000
+  neutral_rating: 3
+m5:
+  sample_rows: 5000
+  lags: [7, 28]
