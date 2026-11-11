@@ -143,7 +143,7 @@ Python · Pandas · NumPy · Scikit-learn · XGBoost · LightGBM · TensorFlow/K
 Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
 VIT Chennai
 
-Add your LinkedIn and GitHub profile links here.
+
 
 ## License
 
