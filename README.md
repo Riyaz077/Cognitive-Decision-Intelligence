@@ -143,8 +143,3 @@ Python · Pandas · NumPy · Scikit-learn · XGBoost · LightGBM · TensorFlow/K
 Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
 VIT Chennai
 
-
-
-## License
-
-Released under the MIT License. Check the original dataset terms separately; this repository license does not relicense third-party datasets.
