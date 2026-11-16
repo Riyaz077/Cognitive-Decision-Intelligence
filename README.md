@@ -84,18 +84,18 @@ Raw datasets
 
 Column names vary between dataset releases. The preprocessing functions validate expected columns and provide clear errors. Review the source data dictionary before training.
 
-## Results
+## **Results**
 
-Place generated model metrics in `results/unified_model_results.csv`. The dashboard accepts a tidy CSV with these columns:
+- Evaluates machine-learning models across three business domains: retail sales, customer sentiment, and demand forecasting.
+- Generates comparative performance metrics for each model.
+- Identifies the best-performing models based on their respective evaluation metrics.
+- Provides dataset-wise performance comparisons through interactive visualizations.
+- Presents analytical insights to support data-driven business decisions.
+- Consolidates model evaluation outputs into `unified_model_results.csv`.
+- Integrates analytical results into the Streamlit dashboard for interactive exploration.
+- Supports evidence-based business strategy through predictive insights and model comparisons.
 
-```csv
-Dataset,Model,Metric,Value
-Walmart,Random Forest,MAE,0.0
-Amazon Reviews,Linear SVM,Accuracy,0.0
-M5,XGBoost,RMSE,0.0
-```
 
-The values above are schema examples only. Replace `0.0` with measured results from your own runs.
 
 ## Responsible reporting
 
