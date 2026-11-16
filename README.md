@@ -64,46 +64,17 @@ Raw datasets
     └── test_smoke.py
 ```
 
-## Quick start
+## **Quick Start**
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/YOUR-USERNAME/Cognitive-Decision-Intelligence.git
-cd Cognitive-Decision-Intelligence
-```
-
-### 2. Create an environment
-
-```bash
-python -m venv .venv
-# Windows PowerShell
-.venv\\Scripts\\Activate.ps1
-# macOS/Linux
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add datasets
-
-Place the original files in the directories described in [`data/README.md`](data/README.md). Dataset files are intentionally not committed because of size and licensing considerations.
-
-### 5. Run the dashboard
-
-```bash
-streamlit run app.py
-```
-
-### 6. Run tests
-
-```bash
-pytest -q
-```
+- Clone the repository and navigate to the project directory.
+- Set up and activate a Python virtual environment.
+- Install all required dependencies using `requirements.txt`.
+- Download and place the Walmart, Amazon Reviews, and M5 datasets in their respective data folders.
+- Configure dataset paths and project settings.
+- Execute the preprocessing and model-training pipelines.
+- Generate and save model evaluation metrics in the `results/` directory.
+- Launch the interactive Streamlit dashboard using `streamlit run app.py`.
+- Run `pytest -q` to verify the project functionality.
 
 ## Expected input data
 
