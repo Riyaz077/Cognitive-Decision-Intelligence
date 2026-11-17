@@ -1,116 +1,187 @@
 # Cognitive Decision Intelligence Framework for Dynamic Business Strategy Using AI
 
-An end-to-end, multi-domain predictive analytics project that evaluates machine-learning models across retail sales, customer sentiment, and large-scale retail forecasting datasets, then presents results through an interactive Streamlit dashboard.
+An end-to-end AI-powered decision intelligence system integrating **Machine Learning, Predictive Analytics, Natural Language Processing, and Business Intelligence** to analyse multiple business domains, compare predictive models, generate actionable insights, and support data-driven strategic decision-making.
 
-> **Project status:** Portfolio-ready starter repository. Add your original datasets, run the pipelines, and replace illustrative/empty result areas with your measured outputs. No performance scores are fabricated in this repository.
+The project evaluates machine-learning models across three datasets: Walmart Retail Sales, Amazon Customer Reviews, and M5 Retail Forecasting, with an interactive **Streamlit dashboard** for performance analysis and visualization.
 
-## Business problems
+## Project Overview
 
-| Dataset | Business problem | Models |
+The framework combines predictive modelling, analytical evaluation, and business intelligence to transform raw business data into meaningful insights.
+
+It focuses on three major analytical domains:
+
+| Dataset | Business Problem | Machine Learning Models |
 |---|---|---|
-| Walmart | Forecast weekly store-department sales | Linear Regression, Random Forest, XGBoost |
-| Amazon Reviews | Classify customer review sentiment | Logistic Regression, Multinomial Naive Bayes, Linear SVM |
-| M5 | Forecast item-level retail demand | XGBoost, LightGBM, LSTM (optional TensorFlow) |
+| Walmart | Weekly retail sales forecasting | Linear Regression, Random Forest, XGBoost |
+| Amazon Reviews | Customer sentiment classification | Logistic Regression, Multinomial Naive Bayes, Linear SVM |
+| M5 | Large-scale retail demand forecasting | XGBoost, LightGBM, LSTM |
 
-## Architecture
+## Project Objectives
+
+- Develop predictive models across multiple business domains.
+- Analyse retail sales, customer sentiment, and demand patterns.
+- Compare machine-learning algorithms using appropriate evaluation metrics.
+- Identify high-performing models for each analytical task.
+- Generate meaningful insights through predictive and comparative analytics.
+- Develop an interactive dashboard for intelligent business decision-making.
+
+## System Architecture
 
 ```text
-Raw datasets
-   ├── Walmart ── preprocessing ── regression models ──┐
-   ├── Amazon  ── text cleaning ─── sentiment models ──┼── Unified evaluation
-   └── M5      ── time features ─── forecasting models ┘
-                                                           │
-                                      CSV results + business insights
-                                                           │
-                                                Streamlit dashboard
+              Business Datasets
+                     |
+        +------------+------------+
+        |            |            |
+     Walmart       Amazon         M5
+        |            |            |
+   Preprocessing  Text Cleaning  Preprocessing
+        |            |            |
+   Sales Models  Sentiment Models Forecasting Models
+        |            |            |
+        +------------+------------+
+                     |
+             Model Evaluation
+                     |
+          Comparative Analytics
+                     |
+          Unified Results Dataset
+                     |
+           Business Intelligence
+                     |
+          Streamlit Dashboard
+                     |
+          Decision Intelligence
 ```
 
-## Repository structure
+## Methodology
+
+1. **Data Collection** – Load Walmart, Amazon Reviews, and M5 datasets.
+2. **Data Preprocessing** – Handle missing values, clean data, and prepare features.
+3. **Exploratory Data Analysis** – Identify patterns, distributions, and relationships.
+4. **Feature Engineering** – Generate relevant features for predictive modelling.
+5. **Model Development** – Implement multiple machine-learning algorithms for each dataset.
+6. **Model Evaluation** – Evaluate performance using appropriate metrics.
+7. **Comparative Analysis** – Compare models and identify their relative performance.
+8. **Business Insights** – Translate analytical findings into meaningful recommendations.
+9. **Dashboard Development** – Integrate analytical outputs into an interactive Streamlit application.
+
+## Technology Stack
+
+**Programming Languages**
+- Python
+
+**Data Science & Machine Learning**
+- Pandas
+- NumPy
+- Scikit-learn
+- XGBoost
+- LightGBM
+
+**Deep Learning & NLP**
+- TensorFlow / Keras
+- Natural Language Processing
+- LSTM
+- TF-IDF
+
+**Visualization & Business Intelligence**
+- Matplotlib
+- Seaborn
+- Plotly
+- Streamlit
+
+**Development Environment**
+- Jupyter Notebook
+- Google Colab
+- Visual Studio Code
+- Git & GitHub
+
+## Results & Analytics
+
+The framework provides:
+
+- Comparative evaluation of machine-learning models across three business domains.
+- Predictive performance analysis for retail sales, sentiment classification, and demand forecasting.
+- Dataset-wise model comparisons using appropriate evaluation metrics.
+- Visual exploration of model performance and analytical patterns.
+- Consolidated evaluation results through `unified_model_results.csv`.
+- Interactive analytical dashboards for exploring model outputs.
+- Business insights to support informed and data-driven strategic decisions.
+
+*Actual performance metrics and model rankings should be reported using measured experimental results.*
+
+## Interactive Dashboard
+
+The Streamlit application provides an integrated interface for exploring analytical results, comparing predictive models, visualizing performance metrics, and generating business-oriented insights.
+
+## Responsible Reporting
+
+- Evaluate models using appropriate held-out test datasets.
+- Apply chronological train-test splits for time-series forecasting.
+- Avoid data leakage during preprocessing and model training.
+- Report actual experimental results without fabricating performance scores.
+- Respect dataset licensing and privacy requirements.
+
+## Repository Structure
 
 ```text
-.
 ├── app.py
 ├── requirements.txt
 ├── README.md
-├── LICENSE
-├── .gitignore
-├── config/
-│   └── settings.yaml
 ├── data/
-│   └── README.md
-├── docs/
-│   ├── methodology.md
-│   └── architecture.md
 ├── notebooks/
-│   └── README.md
-├── presentation/
-│   └── project_presentation.pptx
-├── results/
-│   └── README.md
 ├── models/
-│   └── README.md
+├── results/
 ├── screenshots/
-│   └── README.md
+├── presentation/
 ├── src/
 │   ├── data_preprocessing/
-│   │   ├── walmart.py
-│   │   ├── amazon.py
-│   │   └── m5.py
 │   ├── models/
-│   │   └── train.py
 │   └── analytics/
-│       └── evaluation.py
+├── docs/
 └── tests/
-    └── test_smoke.py
 ```
 
-## **Quick Start**
+## Getting Started
 
-- Clone the repository and navigate to the project directory.
-- Set up and activate a Python virtual environment.
-- Install all required dependencies using `requirements.txt`.
-- Download and place the Walmart, Amazon Reviews, and M5 datasets in their respective data folders.
-- Configure dataset paths and project settings.
-- Execute the preprocessing and model-training pipelines.
-- Generate and save model evaluation metrics in the `results/` directory.
-- Launch the interactive Streamlit dashboard using `streamlit run app.py`.
-- Run `pytest -q` to verify the project functionality.
+**1. Clone the repository**
 
-## Expected input data
+```bash
+git clone <your-repository-url>
+cd <repository-folder>
+```
 
-- **Walmart:** `data/walmart/train.csv`, `features.csv`, `stores.csv`
-- **Amazon:** `data/amazon_reviews/reviews.csv` with review text and rating columns
-- **M5:** `data/m5/sales_train_validation.csv`, `calendar.csv`, `sell_prices.csv`
+**2. Create a virtual environment**
 
-Column names vary between dataset releases. The preprocessing functions validate expected columns and provide clear errors. Review the source data dictionary before training.
+```bash
+python -m venv venv
+```
 
-## **Results**
+**3. Install dependencies**
 
-- Evaluates machine-learning models across three business domains: retail sales, customer sentiment, and demand forecasting.
-- Generates comparative performance metrics for each model.
-- Identifies the best-performing models based on their respective evaluation metrics.
-- Provides dataset-wise performance comparisons through interactive visualizations.
-- Presents analytical insights to support data-driven business decisions.
-- Consolidates model evaluation outputs into `unified_model_results.csv`.
-- Integrates analytical results into the Streamlit dashboard for interactive exploration.
-- Supports evidence-based business strategy through predictive insights and model comparisons.
+```bash
+pip install -r requirements.txt
+```
 
+**4. Prepare the datasets**
 
+Place the Walmart, Amazon Reviews, and M5 datasets in their respective directories under `data/`.
 
-## Responsible reporting
+**5. Run the Streamlit dashboard**
 
-- Do not claim a model is best without comparing it on a held-out test set.
-- For time series, split chronologically; do not randomly mix future observations into training.
-- Report dataset sampling, hardware, runtime, feature definitions, and evaluation metrics.
-- Do not upload restricted datasets, API keys, credentials, private paths, or personal information.
+```bash
+streamlit run app.py
+```
 
-## Technology stack
+**6. Run project tests**
 
-Python · Pandas · NumPy · Scikit-learn · XGBoost · LightGBM · TensorFlow/Keras · Streamlit · Matplotlib · Plotly
+```bash
+pytest -q
+```
+
+*Ensure that the dataset paths, dependencies, and scripts match the actual repository implementation.*
 
 ## Author
 
 **Mohamed Riyaz S.**  
-Integrated M.Tech, Computer Science and Engineering (Business Analytics)  
-VIT Chennai
-
+Integrated M.Tech – Computer Science and Engineering (Business Analytics)  
+Vellore Institute of Technology (VIT), Chennai
